@@ -1,0 +1,19 @@
+<div>
+    <form #containform="ngForm" (ngSubmit)="save(containform.value)">
+        Pid: <input type="number" [(ngModel)]="c.pid" name="pid" #pid="ngModel" required /><br />
+        <span class="invalid-feedback" *ngIf="pid.touched==true && pid.invalid==true">Employee id is mandatory</span><br /><br />
+        
+        Passportno: <input type="text" [(ngModel)]="c.passportno" name="passportno" #passportno="ngModel" required /><br />
+        <span class="invalid-feedback" *ngIf="passportno.touched==true && passportno.invalid==true">Employee name is mandatory</span><br /><br />
+
+        Ticketno: <input type="number" [(ngModel)]="c.ticketno" name="ticketno" #ticketno="ngModel" min="30000" max="100000" required /><br />
+        
+        <span *ngIf="ticketno.errors?.min">minimum salary should be above 30000</span>
+        <span *ngIf="ticketno.errors?.max">minimum salary should be below 100000</span>
+
+        Flightcode: <input type="text" [(ngModel)]="c.flightcode" name="flightcode" #flightcode="ngModel" required /><br />
+        <span class="invalid-feedback" *ngIf="flightcode.touched==true && flightcode.invalid==true">Employee id is mandatory</span><br /><br />
+        
+        <input type="submit" value="Register" [disabled]=!containform.valid class="primary" />
+    </form>
+</div>

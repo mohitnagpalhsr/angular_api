@@ -1,0 +1,9 @@
+<div>
+    <h1> Login Page </h1>
+    <form>
+        UserName: <input type="text" [(ngModel)]="uname" name="username" /> <br/><br/>
+        Password: <input type="password" [(ngModel)]="pwd" name="password" /><br/><br/>
+        <input type="submit" (click)="Login()" value="Login"/><br/><br/>
+    </form>
+    Message: {{message}}
+</div>

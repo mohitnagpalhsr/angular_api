@@ -1,0 +1,24 @@
+<p>List of Employees</p>
+<div style="margin-top: 100px;">
+<table class="table">
+    <tr>
+        <th>Pid</th>
+        <th>Passportno</th>
+        <th>Ticketno</th>
+        <th>Flightcode</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let c of clist">
+            <td>{{c.pid}}</td>
+            <td>{{c.passportno}}</td>
+            <td>{{c.ticketno}}</td>
+            <td>{{c.flightcode}}</td>
+            
+            <td>
+                <a routerLink="/edit/{{c.pid}}">Edit Data | </a>
+                <button type=button class="btn btn-primary" (click)="clickMethod(c)">Delete me</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
